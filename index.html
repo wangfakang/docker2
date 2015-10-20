@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Docker2 by wangfakang</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Docker2</h1>
+        <p class="header">docker network mode</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/wangfakang/docker2/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/wangfakang/docker2/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/wangfakang/docker2">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/wangfakang">wangfakang</a></p>
+
+
+      </header>
+      <section>
+        <p><code>docker网络相关配置：</code></p>
+
+<p>docker的网络配置有四种模式：<br>
+其中bridge为默认不需要用--net去指定，其他三种模式需要在创建容器时使用--net去指定。    </p>
+
+<ul>
+<li>(1)bridge模式，使用--net=bridge指定，默认设置。<br>
+</li>
+<li>(2)none模式，使用--net=none指定。<br>
+</li>
+<li>(3)host模式，使用--net=host指定。<br>
+</li>
+<li>(4)container模式，使用--net=containernam:containerid　　</li>
+</ul>
+
+<h1>
+<a id="1container模式---" class="anchor" href="#1container%E6%A8%A1%E5%BC%8F---" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.container模式:   </h1>
+
+<p>使用--net=container:容器名称或ID指定。（如：--net=containernam:containerid）   </p>
+
+<p>bridge模式：<br>
+    docker网络隔离基于网络命名空间，在物理机上创建docker容器时会为
+    每一个docker容器分配网络命名空间，并且把容器IP桥接到物理机的虚拟网桥上。    </p>
+
+<h1>
+<a id="2none模式--" class="anchor" href="#2none%E6%A8%A1%E5%BC%8F--" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.none模式：  </h1>
+
+<p>此模式下创建容器是不会为容器配置任何网络参数的，如：容器网卡、IP、通信路由等，全部需要自己去配置。</p>
+
+<h1>
+<a id="3host模式--" class="anchor" href="#3host%E6%A8%A1%E5%BC%8F--" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.host模式：  </h1>
+
+<p>此模式创建的容器没有自己独立的网络命名空间，是和物理机共享一个Network Namespace，并且
+   共享物理机的所有端口与IP，并且这个模式认为是不安全的。  </p>
+
+<h1>
+<a id="4container模式-" class="anchor" href="#4container%E6%A8%A1%E5%BC%8F-" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.container模式： </h1>
+
+<p>此模式和host模式很类似，只是此模式创建容器共享的是其他容器的IP和端口而不是物理机，此模式容器
+   自身是不会配置网 络和端口，创建此模式容器进去后，你会发现里边的IP是你所指定的那个容器IP并且端
+   口也是共享的，而且其它还是互相隔离的，如进程等。       </p>
+
+<h1>
+<a id="欢迎一起交流学习-" class="anchor" href="#%E6%AC%A2%E8%BF%8E%E4%B8%80%E8%B5%B7%E4%BA%A4%E6%B5%81%E5%AD%A6%E4%B9%A0-" aria-hidden="true"><span class="octicon octicon-link"></span></a>欢迎一起交流学习 </h1>
+
+<p>在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流</p>
+
+<ul>
+<li>邮件(1031379296#qq.com, 把#换成@)</li>
+<li>QQ: 1031379296</li>
+<li>weibo: <a href="http://weibo.com/u/2786211992/home">@王发康</a>
+</li>
+</ul>
+
+<h1>
+<a id="thx" class="anchor" href="#thx" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thx</h1>
+
+<ul>
+<li>chunshengsterATgmail.com</li>
+</ul>
+
+<h1>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author</h1>
+
+<ul>
+<li>Linux\nginx\golang\c\c++爱好者</li>
+<li>欢迎一起交流  一起学习# </li>
+<li>Others say good and Others good</li>
+</ul>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		          <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("docker net mode ");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
